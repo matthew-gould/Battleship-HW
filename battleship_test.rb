@@ -1,6 +1,7 @@
 require 'minitest/autorun'
 require './ship'
 require './player'
+require './grid'
 require 'pry'
 
 
@@ -33,6 +34,21 @@ class BattleshipTests < MiniTest::Test
 		t = Player.new ("Rob")
 		assert_equal t.name, "Rob"
 	end
+
+  def test_that_player_has_own_grid
+    t = Player.new ("Rob")
+    assert_kind_of Grid, t.grid
+  end
+
+  def test_that_player_has_ships
+    t = Player.new ("Rob")
+    myships = []
+    myships.push t.ships
+    assert_equal myships[0].length, 5
+  end
+
+  # def test_that_player_can_position_ships
+  #   t = Player.new ("Rob")
 
 
 end
