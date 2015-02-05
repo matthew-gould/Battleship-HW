@@ -16,5 +16,7 @@ class Ship
       false
     end
   end
-
+# Ship also needs to know when it is hit
+# Ship needs to know when it is sunk
+# Ship needs to know where it is positioned
 end
