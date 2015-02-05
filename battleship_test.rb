@@ -11,7 +11,7 @@ class BattleshipTests < MiniTest::Test
 
   def test_ship_is_horizontal_or_vertical
     ship = Ship.new "v", 3
-    assert ship.vertical? true
+    assert ship.vertical?, true
   end
 
 

@@ -4,6 +4,7 @@ class Ship
 
   def initialize vertical, length=0
     @length = length.to_i
+    @vertical = vertical.to_s
   end
 
   def vertical?
