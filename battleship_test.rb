@@ -3,6 +3,7 @@ require './ship'
 require './player'
 require './grid'
 require 'pry'
+require 'coordinate_class.rb'
 
 
 class BattleshipTests < MiniTest::Test
@@ -20,16 +21,6 @@ class BattleshipTests < MiniTest::Test
     refute ship_two.vertical?
   end
 
-  # def test_if_the_ship_knows_it_has_been_hit
-  # 	ship = Ship.new "h"
-  # end
-#  TESTS FOR GAME CLASS
-
-# 	def test_game_knows_when_it_is_over
-# 		b = Battleship_Game.new
-# 		assert b.over?
-# end
-
 	def test_player_knows_his_or_her_name
 		t = Player.new ("Rob")
 		assert_equal t.name, "Rob"
@@ -46,11 +37,6 @@ class BattleshipTests < MiniTest::Test
     myships.push t.ships
     assert_equal myships[0].length, 5
   end
-
-  # def test_that_player_can_shoot
-  #   t = Player.new ("Rob")
-  #   t.shoot ("a", 1)
-  #   assert t.shoot?
 
   def test_ship_build_returns_array
     t = Player.new ("Rob")
@@ -72,9 +58,5 @@ class BattleshipTests < MiniTest::Test
     ship.ship_build(1,3)
     assert ship.bounds?
   end
-
-  # def test_that_player_can_position_ships
-  #   t = Player.new ("Rob")
-
-
+  
 end
