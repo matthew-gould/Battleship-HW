@@ -1,13 +1,18 @@
 # Comments here
 require 'pry'
 class Grid
-
-attr_reader :board 
+	ROWS = 10
+	COLS = 10
+	
+	attr_accessor :hits, :misses
+	attr_reader :board 
 
   def initialize 
   	@rows_array = [1,2,3,4,5,6,7,8,9,10]
   	@columns_array = [1,2,3,4,5,6,7,8,9,10]
   	@board = []
+  	@hits = [[3,5], [4,5]]
+  	@misses = [[2,2], [9.8],[5,5], [8.4]]
   end
   	
 
@@ -44,11 +49,40 @@ attr_reader :board
 
   	end
   end
+  
+  def record_shot coord, hit=false
+  	hit ? hits << coord : misses << coord
+  end
+  
+  def draw_board
+  	rMax, cMax = ROWS, COLS
+  	print "   "
+  	(1..COLS).each do |k|
+  		print " #{k} "
+  	end
+  	puts "\n"
+  	(1..rMax).each do |i| 
+  		# Print the row letter
+  		print (i + 64).chr + ": "
+  		(1..cMax).each do |j|
+  			if @hits.include?([i,j])
+  				print " x "
+  			elsif @misses.include?([i,j])
+  				print " - "
+  			else
+  				print " + "
+  			end
+  		end
+  		puts "\n"
+  		cMax = COLS
+  	end
+  end
   			
 
 
 end
 
 q = Grid.new
-q.make_board
-q.show_board
+q.draw_board
+# q.make_board
+# q.show_board

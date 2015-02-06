@@ -47,19 +47,10 @@ class Ship
         r.to_i
         new_array.push([r, (c+=1)])
       end
-    
     new_array 
     end
-  
   end
 
-  # def bounds? (new_array)
-  #  matches = new_array.each {|coordinates| grid.each.include? coordinates}
-  #   if matches == new_array
-  #     true
-  #   else
-  #     false
-    
 end
 
 a = Ship.new("v", 5)
