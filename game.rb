@@ -1,3 +1,4 @@
+# Game class
 require 'pry'
 
 class Battleship_Game 
