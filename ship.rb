@@ -7,7 +7,6 @@ class Ship
     @length = length.to_i
     @position = position.to_s
     @hits = 0
-    @build = []
   end
 
   def vertical?
@@ -31,47 +30,28 @@ class Ship
   end
 
   def ship_build r, c
+    new_array = []
     if @position == true
+      new_array.push([r,c])
       @length.times do
         c.to_i
         r.to_i
-        @build = @build.push([(r+=1),c])
-        binding.pry
+
+        new_array.push([(r+=1),c])
       end
+      return new_array
     else
+      new_array.push([r,c])
       @length.times do 
         c.to_i
         r.to_i
-        @build = @build.push([r, (c+=1)])
+        new_array.push([r, (c+=1)])
       end
+    new_array 
     end
-    return @build
   end
 
-  def bounds? grid
-     new_array = []
-    @build.each do |coordinates|
- 
-      
-       if grid.each.include? coordinates
-        new_array.push(coordinates)
-          binding.pry
-        end
-      end
-    end
-
-      
-
-
-    #   if @position == true
-    #     if coordinates[0] > 10
-    #       return false
-
-    #  unless grid.each.include?(coordinates)
-    #     return false
-    #   else
-    #     true
-    #   end
-    # end
-
 end
+
+a = Ship.new("v", 5)
+binding.pry
