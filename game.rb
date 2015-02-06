@@ -3,7 +3,6 @@ require 'pry'
 
 class Battleship_Game 
 	def initialize
-
 	end
 
 	def winner?

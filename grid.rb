@@ -36,20 +36,6 @@ class Grid
   		puts ""
   	end
   end
-  		
-
-  def show_row row
-  	row.each do |coordinate|
-  		if coordinate.length <=2
-
-  			print " + "
-  		elsif coordinate.length >= 2
-  			print " X "
-  			# hit or miss 
-  		end
-
-  	end
-  end
   
   def record_shot coord, hit=false
   	hit ? hits << coord : misses << coord
