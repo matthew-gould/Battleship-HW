@@ -36,7 +36,7 @@ class Ship
         c.to_i
         r.to_i
         @build = @build.push([(r+=1),c])
-        # binding.pry
+        binding.pry
       end
     else
       @length.times do 
@@ -49,15 +49,16 @@ class Ship
   end
 
   def bounds? grid
+     new_array = []
     @build.each do |coordinates|
-      # binding.pry
-        if coordinates == grid.each.include? coordinates
-        return true
-      else
-        false
+ 
+      
+       if grid.each.include? coordinates
+        new_array.push(coordinates)
+          binding.pry
+        end
       end
     end
-  end
 
       
 
