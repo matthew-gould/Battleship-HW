@@ -3,7 +3,7 @@ require './ship'
 require './player'
 require './grid'
 require 'pry'
-require 'coordinate_class.rb'
+
 
 
 class BattleshipTests < MiniTest::Test
@@ -47,16 +47,20 @@ class BattleshipTests < MiniTest::Test
 
   def test_we_can_haz_not_build_ship?
     t = Player.new ("Rob")
+    t.grid.make_board
     ship = Ship.new("v", 5)
     ship.ship_build(10,10)
-    refute ship.bounds?
+    # binding.pry
+    refute ship.bounds?(t.grid.board)
   end
 
   def test_we_can_haz_build_ship?
     t = Player.new ("Rob")
+    t.grid.make_board
     ship = Ship.new("v", 5)
     ship.ship_build(1,3)
-    assert ship.bounds?
+    binding.pry
+    assert ship.bounds?(t.grid.board)
   end
   
 end

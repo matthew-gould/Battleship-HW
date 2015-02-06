@@ -5,6 +5,8 @@ class Grid
 	COLS = 10
 	
 	attr_accessor :hits, :misses
+	attr_reader :board 
+
   def initialize 
   	@rows_array = [1,2,3,4,5,6,7,8,9,10]
   	@columns_array = [1,2,3,4,5,6,7,8,9,10]
