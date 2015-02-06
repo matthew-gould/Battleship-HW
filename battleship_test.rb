@@ -3,6 +3,7 @@ require './ship'
 require './player'
 require './grid'
 require 'pry'
+require 'coordinate_class.rb'
 
 
 class BattleshipTests < MiniTest::Test
@@ -47,16 +48,33 @@ class BattleshipTests < MiniTest::Test
     assert_equal myships[0].length, 5
   end
 
-  def test_that_player_can_shoot
-    t = Player.new ("Rob")
-    t.shoot ("a", 1)
-    assert t.shoot?
+  # def test_that_player_can_shoot
+  #   t = Player.new ("Rob")
+  #   t.shoot ("a", 1)
+  #   assert (:A, 1).shot?
+  #   #Do we want to ask if it has shot? That's another function.
+  #   #We could try to assert that the coordinate has been shot.
+  # end
+
 
   # def test_that_player_can_position_ships
   #   t = Player.new ("Rob")
 
-  def test_grid_has_arrays
-  	
+  # def test_grid_has_arrays
+  # end
+
+  	def test_coordinate_knows_its_position
+      c = Coordinate.new "B", 5
+      binding.pry
+      assert_equal c.row, :B
+      assert_equal c.column, 5
+    end
+
+    # def test_coordinate_knows_if_it_is_occupied
+    # end
+
+    # def test_coordinate_returns_hit_or_miss_when_shot
+    # end
 
 
 end

@@ -19,6 +19,7 @@ class Battleship_Game
 		
 		# player 2 shoots. 
 		#end
+		
 	end
 
 end

@@ -1,10 +1,10 @@
-require 'pry'
-# Thoughts on possible Coordinate class
+# require 'pry'
+# # Thoughts on possible Coordinate class
 
 # class Coordinate
 # 	attr_reader :row, :column, :coor_array
 
-# 	def initialize (row, column)
+# 	def initialize row, column
 # 	@coor_array= []
 # 	@row = row
 # 	@column = column
@@ -21,7 +21,8 @@ require 'pry'
 
 # 	end
 
-# 	def assign
+# 	def occupy
 # 		@occupied = true
 # 	end
+
 # end
