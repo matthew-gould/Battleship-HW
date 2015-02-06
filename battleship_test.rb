@@ -50,5 +50,8 @@ class BattleshipTests < MiniTest::Test
   # def test_that_player_can_position_ships
   #   t = Player.new ("Rob")
 
+  def test_grid_has_arrays
+  	
+
 
 end
