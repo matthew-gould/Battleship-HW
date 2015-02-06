@@ -10,7 +10,6 @@ class Ship
   end
 
   def vertical?
-
     if @position == "v"
       true
     elsif @position == "h"
@@ -50,6 +49,8 @@ class Ship
     new_array 
     end
   end
+  #This function returns new_array, which is an array of the coordinates
+  # 
 
 end
 
