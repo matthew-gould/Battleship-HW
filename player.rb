@@ -21,7 +21,7 @@ class Player
   end
 
   def shoot (x,y)
-  	#grid needs to check coordinates for hit/miss
+    #grid needs to check coordinates for hit/miss
   	#return hit or miss
 
   end

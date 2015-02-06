@@ -47,6 +47,11 @@ class BattleshipTests < MiniTest::Test
     assert_equal myships[0].length, 5
   end
 
+  def test_that_player_can_shoot
+    t = Player.new ("Rob")
+    t.shoot ("a", 1)
+    assert t.shoot?
+
   # def test_that_player_can_position_ships
   #   t = Player.new ("Rob")
 
