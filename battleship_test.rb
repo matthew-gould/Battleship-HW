@@ -49,11 +49,6 @@ class BattleshipTests < MiniTest::Test
   end
 
   # def test_that_player_can_shoot
-  #   t = Player.new ("Rob")
-  #   t.shoot ("a", 1)
-  #   assert (:A, 1).shot?
-  #   #Do we want to ask if it has shot? That's another function.
-  #   #We could try to assert that the coordinate has been shot.
   # end
 
 
@@ -62,19 +57,5 @@ class BattleshipTests < MiniTest::Test
 
   # def test_grid_has_arrays
   # end
-
-  	def test_coordinate_knows_its_position
-      c = Coordinate.new "B", 5
-      binding.pry
-      assert_equal c.row, :B
-      assert_equal c.column, 5
-    end
-
-    # def test_coordinate_knows_if_it_is_occupied
-    # end
-
-    # def test_coordinate_returns_hit_or_miss_when_shot
-    # end
-
 
 end
