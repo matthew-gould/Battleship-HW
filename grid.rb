@@ -29,7 +29,6 @@ class Grid
   	end
   end
   		
-
   def show_row row
   	row.each do |coordinate|
   		if coordinate.length <=2
