@@ -21,9 +21,13 @@ class Player
   end
 
   def shoot (x,y)
-    #grid needs to check coordinates for hit/miss
+	#grid needs to check coordinates for hit/miss
   	#return hit or miss
-
+  end
+  
+  def letter_to_digit letter
+  	# convert letter or symbol to ascii and a digit from 1 to 26
+  	letter.to_s.downcase.bytes[0] - 96
   end
 
 end
