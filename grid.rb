@@ -1,4 +1,5 @@
-# Comments here
+# Class Grid
+
 require 'pry'
 class Grid
 	ROWS = 10
@@ -11,8 +12,8 @@ class Grid
   	@rows_array = [1,2,3,4,5,6,7,8,9,10]
   	@columns_array = [1,2,3,4,5,6,7,8,9,10]
   	@board = []
-  	@hits = [[3,5], [4,5]]
-  	@misses = [[2,2], [9.8],[5,5], [8.4]]
+  	@hits = []
+  	@misses = []
   end
   	
 
@@ -56,11 +57,13 @@ class Grid
   
   def draw_board
   	rMax, cMax = ROWS, COLS
+  	# Print the column number
   	print "   "
   	(1..COLS).each do |k|
   		print " #{k} "
   	end
   	puts "\n"
+  	
   	(1..rMax).each do |i| 
   		# Print the row letter
   		print (i + 64).chr + ": "
@@ -82,7 +85,7 @@ class Grid
 
 end
 
-q = Grid.new
-q.draw_board
+# q = Grid.new
+# q.draw_board
 # q.make_board
 # q.show_board
