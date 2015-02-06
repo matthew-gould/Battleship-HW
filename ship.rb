@@ -7,6 +7,7 @@ class Ship
     @length = length.to_i
     @position = position.to_s
     @hits = 0
+    @ship_build = []
   end
 
   def vertical?
@@ -28,5 +29,33 @@ class Ship
   def hits
     @hits += 1
   end
+
+  def ship_build r, c
+    if @position == true
+      @length.times do
+        c.to_i
+        r.to_i
+        @ship_build.push [(r+=1),c]
+      end
+    else
+      @length.times do 
+        c.to_i
+        r.to_i
+        @ship_build.push [r, (c+=1)]
+      end
+      return @ship_build
+    end
+  end
+
+  def bounds?
+    @ship_build.each do |coordinates|
+      if !@board.include?
+        return false
+      end
+    end
+      puts "Out of bounds, asshole!"
+  end
+
+
 
 end

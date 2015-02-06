@@ -2,8 +2,8 @@ require 'pry'
 class Grid
 
   def initialize 
-  	@rows_array = [:a,:b,:c,:d,:e,:f,:g,:h,:i,:j]
-  	@columns_array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  	@rows_array = [1,2,3,4,5,6,7,8,9,10]
+  	@columns_array = [1,2,3,4,5,6,7,8,9,10]
   	@board = []
   end
   	
@@ -17,10 +17,9 @@ class Grid
   			array_for_row.push coordinate
   			end
   			@board.push array_for_row
-  	end 
+  	end
   	return @board
-  	binding.pry 
-  end
+  end 
 
   def show_board 
   	@board.each do |row|
@@ -50,4 +49,3 @@ end
 q = Grid.new
 q.make_board
 q.show_board
-binding.pry

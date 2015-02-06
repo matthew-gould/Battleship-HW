@@ -47,10 +47,31 @@ class BattleshipTests < MiniTest::Test
     assert_equal myships[0].length, 5
   end
 
-  def test_that_player_can_shoot
+  # def test_that_player_can_shoot
+  #   t = Player.new ("Rob")
+  #   t.shoot ("a", 1)
+  #   assert t.shoot?
+
+  def test_ship_build_returns_array
     t = Player.new ("Rob")
-    t.shoot ("a", 1)
-    assert t.shoot?
+    s = Ship.new("v", 4)
+    hh = s.ship_build(4,4)
+    assert hh.is_a?(Array)
+  end
+
+  def test_we_can_haz_not_build_ship?
+    t = Player.new ("Rob")
+    ship = Ship.new("v", 5)
+    ship.ship_build(10,10)
+    refute ship.bounds?
+  end
+
+  def test_we_can_haz_build_ship?
+    t = Player.new ("Rob")
+    ship = Ship.new("v", 5)
+    ship.ship_build(1,3)
+    assert ship.bounds?
+  end
 
   # def test_that_player_can_position_ships
   #   t = Player.new ("Rob")
