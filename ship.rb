@@ -1,6 +1,7 @@
 require 'pry'
 require './player'
 require './grid'
+binding.pry
 
 class Ship
 
@@ -58,7 +59,6 @@ class Ship
   def unique_space? (ship_placement, ships_place)
       if ships_place.any?{|x| ship_placement.include? x}
       end
-
   end
 
 

@@ -18,7 +18,7 @@ class Player
     @length_array.each do |x|
       puts "Would you like your #{x} ship to be vertical or horizontal? (v/h)"
       position = gets.chomp.downcase
-      this_ship =  Ship.new(position, x)
+      this_ship = Ship.new(position, x)
       puts "Please enter the starting coordinates for this ship. First, what row?"
       row = gets.chomp.to_i
       puts "Now the column."
@@ -37,7 +37,6 @@ class Player
   def shoot (x,y)
   	#grid needs to check coordinates for hit/miss
   	#return hit or miss
-
   end
 
 end
