@@ -14,7 +14,6 @@ class Player
     @ship_array.each do |x|
       puts "Would you like your #{x} ship to be vertical or horizontal? (v/h)"
       position = gets.chomp.downcase
-
       empty.push Ship.new(position, x)
     end
     empty
