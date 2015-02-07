@@ -6,6 +6,7 @@ class Ship
   def initialize position, length=0
     @length = length.to_i
     @position = position.to_s
+    @ships_array = []
   end
 
   def vertical?
@@ -16,7 +17,36 @@ class Ship
       false
     end
   end
-# Ship also needs to know when it is hit
-# Ship needs to know when it is sunk
-# Ship needs to know where it is positioned
+
+  def ship_build r, c
+    new_array = []
+    if @position == true
+      new_array.push([r,c])
+      actual = @length
+      (actual-1).times do
+        c.to_i
+        r.to_i
+        new_array.push([(r+=1),c])
+      end
+      return new_array
+    else
+      new_array.push([r,c])
+      actuary = @length 
+      (actuary-1).times do 
+        c.to_i
+        r.to_i
+        new_array.push([r, (c+=1)])
+      end
+      return new_array
+   end
+ end
+
+  def in_bounds? (new_array)
+    new_array.all? {|x| self.square_in_bounds?(x)}
+  end
+
+  def square_in_bounds? (coordinate)
+    coordinate.all? {|x|  x < 11 && x >0}
+  end
+
 end

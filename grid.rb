@@ -2,7 +2,7 @@ require 'pry'
 class Grid
 
   def initialize 
-  	@rows_array = [:a,:b,:c,:d,:e,:f,:g,:h,:i,:j]
+  	@rows_array = [1,2,3,4,5,6,7,8,9,10]
   	@columns_array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
   	@board = []
   end
@@ -50,4 +50,3 @@ end
 q = Grid.new
 q.make_board
 q.show_board
-binding.pry

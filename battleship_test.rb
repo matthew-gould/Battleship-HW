@@ -20,16 +20,6 @@ class BattleshipTests < MiniTest::Test
     refute ship_two.vertical?
   end
 
-  # def test_if_the_ship_knows_it_has_been_hit
-  # 	ship = Ship.new "h"
-  # end
-#  TESTS FOR GAME CLASS
-
-# 	def test_game_knows_when_it_is_over
-# 		b = Battleship_Game.new
-# 		assert b.over?
-# end
-
 	def test_player_knows_his_or_her_name
 		t = Player.new ("Rob")
 		assert_equal t.name, "Rob"
@@ -47,8 +37,22 @@ class BattleshipTests < MiniTest::Test
     assert_equal myships[0].length, 5
   end
 
-  # def test_that_player_can_position_ships
-  #   t = Player.new ("Rob")
+  def test_ship_build_returns_an_array
+    a = Ship.new("v", 5)
+    assert  (a.ship_build(10,10)).is_a?(Array)
+  end
 
+  # def test_ship_builds_returns_false_if_out_of_bounds
+  #   a = Ship.new("v", 5)
+  #   q = a.ship_build(10,10)
+  #   refute q
+  # end
+
+  def test_ship_in_bounds?
+    a = Ship.new("v",5)
+    q = a.ship_build(10,10)
+    binding.pry
+    refute a.in_bounds?(q)
+  end
 
 end
