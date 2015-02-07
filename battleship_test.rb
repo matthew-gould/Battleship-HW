@@ -6,11 +6,11 @@ require 'pry'
 
 
 class BattleshipTests < MiniTest::Test
-
-  def test_ship_has_a_length
-    ship = Ship.new "v", 3
-    assert ship.length > 0
-  end
+# FIX FOR NEW NAME
+  # def test_ship_has_a_length
+  #   ship = Ship.new "v", 3
+  #   assert ship.length > 0
+  # end
 
   def test_ship_is_horizontal_or_vertical
     ship = Ship.new "v", 3
@@ -39,20 +39,23 @@ class BattleshipTests < MiniTest::Test
 
   def test_ship_build_returns_an_array
     a = Ship.new("v", 5)
-    assert  (a.ship_build(10,10)).is_a?(Array)
+    assert  (a.ship_build(1,1)).is_a?(Array)
   end
 
-  # def test_ship_builds_returns_false_if_out_of_bounds
-  #   a = Ship.new("v", 5)
-  #   q = a.ship_build(10,10)
-  #   refute q
-  # end
+  def test_ship_builds_is_in_bounds
+    a = Ship.new("v", 5)
+    q = a.ship_build(1,1)
+    assert q
+  end
 
-  def test_ship_in_bounds?
+  def test_ship_in__not_in_bounds?
     a = Ship.new("v",5)
     q = a.ship_build(10,10)
-    binding.pry
-    refute a.in_bounds?(q)
+    refute q
+    # refute a.in_bounds?(q)
   end
 
+  def test_ships_know_if_they_are_on_other_ships
+
+  end
 end

@@ -1,4 +1,7 @@
 require 'pry'
+require './player'
+require './grid'
+
 class Ship
 
   attr_reader :length
@@ -37,7 +40,10 @@ class Ship
         r.to_i
         new_array.push([r, (c+=1)])
       end
-      return new_array
+      if self.in_bounds?(new_array)
+        # if it is in a unique space
+        return new_array
+      end
    end
  end
 
@@ -48,5 +54,13 @@ class Ship
   def square_in_bounds? (coordinate)
     coordinate.all? {|x|  x < 11 && x >0}
   end
+
+  def unique_space? (ship_placement, ships_place)
+      if ships_place.any?{|x| ship_placement.include? x}
+      end
+
+  end
+
+
 
 end
